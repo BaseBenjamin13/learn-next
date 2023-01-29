@@ -1,16 +1,16 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import NavBar from '@/components/Navbar';
-import { Toaster } from 'react-hot-toast'
+import { Toaster } from 'react-hot-toast';
+import { UserContext } from '../lib/context';
 
-import { GetServerSideProps } from 'next';
 
 export default function App({ Component, pageProps }: AppProps) {
     return (
-        <>
+        <UserContext.Provider value={{ user: {}, username: 'jeff'}}>
             <NavBar />
             <Component {...pageProps} />
             <Toaster />
-        </>
+        </UserContext.Provider>
     )
 }

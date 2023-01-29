@@ -1,10 +1,12 @@
 
 import { auth, googleAuthProvider } from '../lib/firebase';
+import { useContext } from 'react';
+import { UserContext } from '../lib/context';
+
 
 export default function EnterPage({ }) {
 
-    const user = null;
-    const username = null;
+    const { user, username } = useContext(UserContext);
 
     return (
         <main>
@@ -16,6 +18,8 @@ export default function EnterPage({ }) {
         </main>
     )
 }
+
+
 
 function SignInButton() {
     const signInWithGoogle = async () => {
