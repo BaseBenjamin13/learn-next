@@ -3,6 +3,7 @@ import { auth, googleAuthProvider } from '../lib/firebase';
 import { useContext } from 'react';
 import { UserContext } from '../lib/context';
 import UsernameForm from '../components/UsernameForm';
+import SignOutButton from '../components/SignOutButton';
 
 
 export default function EnterPage(props) {
@@ -31,6 +32,4 @@ function SignInButton() {
         </button>
     )
 }
-function SignOutButton() {
-    return <button onClick={() => auth.signOut()}>Sign Out</button>
-}
+
