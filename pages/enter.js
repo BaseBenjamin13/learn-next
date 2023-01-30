@@ -4,10 +4,10 @@ import { useContext } from 'react';
 import { UserContext } from '../lib/context';
 
 
-export default function EnterPage({ }) {
+export default function EnterPage(props) {
 
     const { user, username } = useContext(UserContext);
-
+    console.log(user)
     return (
         <main>
             {user ? 
@@ -35,5 +35,9 @@ function SignOutButton() {
     return <button onClick={() => auth.signOut()}>Sign Out</button>
 }
 function UsernameForm() {
-
+    return (
+        <>
+            <h1>Username Form</h1>
+        </>
+    )
 }
