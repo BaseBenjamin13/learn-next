@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }, AppProps) {
     const userData = useUserData();
 
     return (
-        <UserContext.Provider value={{user: userData.user, username: userData.username}}>
+        <UserContext.Provider value={userData}>
             <NavBar />
             <Component {...pageProps} />
             <Toaster />
