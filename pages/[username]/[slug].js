@@ -16,6 +16,7 @@ export async function getStaticProps({ params }) {
         const postsQuery = userDoc.ref
             .collection('posts')
             .where('slug', '==', slug)
+            .limit(1)
         post = (await postsQuery.get()).docs.map(postToJSON);
         // post = await postToJSON(await postsQuery.get());
         post = post[0]
