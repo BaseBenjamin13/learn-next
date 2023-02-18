@@ -24,7 +24,7 @@ export default function NavBar() {
                         </li>
                         <li>
                             <Link href={`/${username}`}>
-                                <img src={user.photoURL || '/B.png'} />
+                                <img src={user?.photoURL || '/B.png'} />
                             </Link>
                         </li>
                     
