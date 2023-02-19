@@ -4,7 +4,7 @@ import toast from 'react-hot-toast'
 import { firestore, fromMillis, postToJSON } from '../lib/firebase';
 import PostFeed from '../components/PostFeed';
 
-const LIMIT = 1;
+const LIMIT = 5;
 export async function getServerSideProps(context) {
     const postsQuery = firestore
         .collectionGroup('posts')

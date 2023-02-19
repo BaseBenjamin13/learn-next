@@ -4,8 +4,7 @@ export default function PostFeed({ posts }) {
     return (
         posts ? 
             posts.map((post) => {
-                return <PostItem post={post} key={post.slug} />
-                // return <PostItem post={post} key={post.slug} admin={admin}/>
+                return <PostItem post={post} key={post.slug}/>
             })
         : null
         
