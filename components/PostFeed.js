@@ -1,17 +1,17 @@
 import Link from "next/link";
 
-export default function PostFeed({ posts }) {
+export default function PostFeed({ posts, showEdit }) {
     return (
         posts ? 
             posts.map((post) => {
-                return <PostItem post={post} key={post.slug}/>
+                return <PostItem post={post} key={post.slug} showEdit={showEdit}/>
             })
         : null
         
     )
 }
 
-function PostItem({ post, key, admin }){
+function PostItem({ post, key, admin, showEdit }){
     const wordCount = post?.content.trim().split(/\s+/g).length;
     const minutesToRead = (wordCount / 100 + 1).toFixed(0);
     return(
@@ -27,6 +27,12 @@ function PostItem({ post, key, admin }){
                     <a>{post.title}</a>
                 </h2>
             </Link>
+
+            { showEdit &&
+                <Link href={`/admin/${post.slug}`}>
+                    <button className="btn-blue">Edit</button>
+                </Link>
+            }
     
             <footer>
                 <span>

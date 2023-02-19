@@ -33,7 +33,7 @@ function PostList() {
     return (
         <>
             <h1>Manage your Posts</h1>
-            <PostFeed posts={posts} admin />
+            <PostFeed posts={posts} admin showEdit={true}/>
         </>
     )
 }
